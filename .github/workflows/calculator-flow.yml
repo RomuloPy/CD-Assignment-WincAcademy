@@ -24,7 +24,7 @@ jobs:
           pytest
 
   deploy:
-    needs: run-tests
+    needs: Test with pytest
     runs-on: ubuntu-20.04
     steps:
       - name: Deploy to server
