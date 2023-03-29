@@ -30,10 +30,10 @@ jobs:
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.CD-Assignment }}
-          username: ${{ secrets.romulo.santos@hotmail.com }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
-          port: ${{ secrets.SERVER_PORT }}
+          port: ${{ secrets.PORT }}
           script_stop: true
           script: |
             eval "$(ssh-agent -s)"
