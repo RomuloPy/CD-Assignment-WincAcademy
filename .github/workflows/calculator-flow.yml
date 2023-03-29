@@ -31,7 +31,7 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.CD-Assignment }}
-          username: ${{ secrets.SERVER_USERNAME }}
+          username: ${{ secrets.romulo.santos@hotmail.com }}
           key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
           port: ${{ secrets.SERVER_PORT }}
           script_stop: true
