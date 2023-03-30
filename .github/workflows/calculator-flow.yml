@@ -33,7 +33,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
-          port: 22
+          port: ${{ secrets.PORT }}
           script_stop: true
           script: |
             eval "$(ssh-agent -s)"
@@ -41,4 +41,4 @@ jobs:
             cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
             git pull
             git status
-            systemctl restart CD-Assignment-WincAcademy
+            sudo systemctl restart nginx
