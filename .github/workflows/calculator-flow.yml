@@ -33,7 +33,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
-          port: ${{ secrets.PORT }}
+          port: ${{ secrets.CD_ASSIGNMENT_SECRET_PORT }}
           script_stop: true
           script: |
             eval "$(ssh-agent -s)"
