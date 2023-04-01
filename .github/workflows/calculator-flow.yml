@@ -32,7 +32,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.PASS }}
+          key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
           port: ${{ secrets.PORT }}
           script_stop: true
           script: |
