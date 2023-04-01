@@ -30,7 +30,15 @@ jobs:
       - name: Deploy to DigitalOcean
         uses: easingthemes/ssh-deploy@v4.0.1
         with:
-          ssh_private_key: ${{ secrets.KEY }}
-          remote_user: ${{ secrets.USER }}
-          remote_host: ${{ secrets.HOST }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
+          script_stop: true
+          script: |
+            eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/SERVER-GITHUB-PULL
+            cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
+            git pull
+            git status
+            sudo systemctl restart nginx
 
