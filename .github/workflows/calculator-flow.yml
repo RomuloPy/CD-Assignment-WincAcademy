@@ -30,8 +30,8 @@ jobs:
       - name: Deploy to DigitalOcean
         uses: appleboy/ssh-action@v0.1.8
         with:
-          host: ${{ secrets.CD_ASSIGNMENT_SECRET }}
-          username: ${{ secrets.CD_ASSIGNMENT_SECRET }}
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
           key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
           port: ${{ secrets.PORT }}
           script_stop: true
