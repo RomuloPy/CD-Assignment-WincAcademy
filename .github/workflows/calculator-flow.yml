@@ -35,9 +35,5 @@ jobs:
           key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
           port: ${{ secrets.PORT }}
           script_stop: true
-          script: |
-            cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
-            git pull
-            git status
-            sudo systemctl restart nginx
+          script: "Hello World"
 
