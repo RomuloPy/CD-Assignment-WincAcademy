@@ -36,8 +36,6 @@ jobs:
           port: ${{ secrets.PORT }}
           script_stop: true
           script: |
-            eval "$(ssh-agent -s)"
-            ssh-add ~/.ssh/SERVER-GITHUB-PULL
             cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
             git pull
             git status
