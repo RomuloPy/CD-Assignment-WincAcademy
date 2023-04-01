@@ -30,10 +30,10 @@ jobs:
       - name: Deploy to DigitalOcean
         uses: appleboy/ssh-action@v0.1.8
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
+          host: ${{ secrets.CD_ASSIGNMENT_SECRET }}
+          username: ${{ secrets.CD_ASSIGNMENT_SECRET }}
           key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
-          port: ${{ secrets.PORT }}
+          port: ${{ secrets.CD_ASSIGNMENT_SECRET }}
           script_stop: true
           script: |
             cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
