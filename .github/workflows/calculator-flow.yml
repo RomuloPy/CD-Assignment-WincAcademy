@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Deploy to DigitalOcean
-        uses: easingthemes/ssh-deploy@v2.3.3
+        uses: easingthemes/ssh-deploy@v4.0.1
         with:
           ssh-private-key: ${{ secrets.CD_ASSIGNMENT_SECRET_KEY }}
           remote-user: ${{ secrets.CD_ASSIGNMENT_SECRET_USER }}
