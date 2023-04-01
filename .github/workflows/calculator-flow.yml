@@ -28,11 +28,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Deploy to server
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.8
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
+          key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script_stop: true
           script: |
