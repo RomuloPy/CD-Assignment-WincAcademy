@@ -37,4 +37,3 @@ jobs:
             cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
             git pull
             git status
-            sudo systemctl restart nginx
