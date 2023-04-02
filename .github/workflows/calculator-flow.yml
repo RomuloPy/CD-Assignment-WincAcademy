@@ -2,7 +2,8 @@ name: Python package
 
 on: [push]
 
-jobs: 
+jobs:
+  
   run-tests:
     runs-on: ubuntu-latest
 
@@ -21,21 +22,21 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
-
   deploy:
     needs: run-tests
     runs-on: ubuntu-20.04
     steps:
-  - name: Deploy to DigitalOcean
-    uses: appleboy/ssh-action@v0.1.8
-      with:
-        host: ${{ secrets.SSH_PRIVATE_KEY }}
-        username: ${{ secrets.SSH_PRIVATE_KEY }}
-        key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
-        port: ${{ secrets.SSH_PRIVATE_KEY }}
-        script_stop: true
-        script: |
-          cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
-          git pull
-          git status
-          sudo systemctl restart nginx
+      - name: Deploy to DigitalOcean
+        uses: easingthemes/ssh-deploy@v4.0.1
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
+          script_stop: true
+          script: |
+            eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/SERVER-GITHUB-PULL
+            cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
+            git pull
+            git status
+            sudo systemctl restart nginx
