@@ -29,9 +29,10 @@ jobs:
       - name: Deploy to DigitalOcean
         uses: easingthemes/ssh-deploy@v4.0.1
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
+          host: ${{ secrets.SSH_PRIVATE_KEY }}
+          username: ${{ secrets.SSH_PRIVATE_KEY }}
           key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
+          port: ${{ secrets.SSH_PRIVATE_KEY }}
           script_stop: true
           script: |
             eval "$(ssh-agent -s)"
