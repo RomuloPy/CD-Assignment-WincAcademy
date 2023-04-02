@@ -29,10 +29,10 @@ jobs:
     steps:
       - name: Deploy to DigitalOcean
         run: ssh -i ${{ secrets.SSH_PRIVATE_KEY }} root@159.65.201.52 -p 22
-        script: |
-          eval "$(ssh-agent -s)"
-          ssh-add ~/.ssh/SERVER-GITHUB-PULL
-          cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
-          git pull
-          git status
-          sudo systemctl restart nginx
+    script: |
+      eval "$(ssh-agent -s)"
+      ssh-add ~/.ssh/SERVER-GITHUB-PULL
+      cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
+      git pull
+      git status
+      sudo systemctl restart nginx
