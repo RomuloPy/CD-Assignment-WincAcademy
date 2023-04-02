@@ -23,12 +23,28 @@ jobs:
         run: |
           pytest
 
+
+
   deploy:
-    needs: run-tests
-    runs-on: ubuntu-20.04
+    needs: run-tests  
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy to DigitalOcean
-        run: ssh -i ${{ secrets.SSH_PRIVATE_KEY }} root@159.65.201.52 -p 22
-            git add *
-            git stash
-            git pull
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Deploy to DigitalOcean
+      uses: appleboy/ssh-action@master
+      with:
+        host: root@159.65.201.52
+        port: 22
+        username: root
+        script: |
+          cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
+          git pull origin main
+          # Additional commands to deploy the app
