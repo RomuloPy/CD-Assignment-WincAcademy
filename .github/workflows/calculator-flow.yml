@@ -22,18 +22,5 @@ jobs:
       - name: Test with pytest
         run: |
           pytest
-  deploy:
-    needs: run-tests
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Deploy to DigitalOcean
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_PRIVATE_KEY }}
-          username: ${{ secrets.SSH_PRIVATE_KEY }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script_stop: true
-          script: |
-            cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
-            git pull
-            git status
+          ssh -i (echo "${{ secrets.SSH_PRIVATE_KEY }}") root@159.65.201.52 -p 22 "cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
+ && git pull"
