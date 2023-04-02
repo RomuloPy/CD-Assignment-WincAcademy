@@ -26,8 +26,17 @@ jobs:
   deploy:
     needs: run-tests
     runs-on: ubuntu-20.04
-    run: |
-    ssh -i (echo "${{ secrets.SSH_PRIVATE_KEY }}") root@159.65.201.52  "cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
- && git pull"
-      
-
+    steps:
+  - name: Deploy to DigitalOcean
+    uses: appleboy/ssh-action@v0.1.8
+      with:
+        host: ${{ secrets.SSH_PRIVATE_KEY }}
+        username: ${{ secrets.SSH_PRIVATE_KEY }}
+        key: ${{ secrets.CD_ASSIGNMENT_SECRET }}
+        port: ${{ secrets.SSH_PRIVATE_KEY }}
+        script_stop: true
+        script: |
+          cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
+          git pull
+          git status
+          sudo systemctl restart nginx
