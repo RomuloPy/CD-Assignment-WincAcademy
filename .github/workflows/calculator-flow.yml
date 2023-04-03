@@ -57,4 +57,4 @@ jobs:
       
     - name: Start gunicorn3
       run: |
-        gunicorn3 --workers=3 app:app --daemon
+        /usr/bin/gunicorn3 --workers=3 app:app --daemon
