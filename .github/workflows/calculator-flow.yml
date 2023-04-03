@@ -48,3 +48,5 @@ jobs:
         script: |
           cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
           git pull origin main
+          sudo pkill -f gunicorn3
+          gunicorn3 --workers=3 app:app --daemon
