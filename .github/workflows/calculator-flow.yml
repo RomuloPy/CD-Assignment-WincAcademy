@@ -53,7 +53,7 @@ jobs:
       run: export PATH="/usr/bin:$PATH"
 
     - name: Kill running gunicorn3 process
-      run: sudo pkill -f gunicorn3
+      run: pkill -f gunicorn3
       
     - name: Start gunicorn3
       run: |
