@@ -48,13 +48,3 @@ jobs:
         script: |
           cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
           git pull origin main
-
-    - name: Add gunicorn3 path to PATH
-      run: export PATH="/usr/bin:$PATH"
-
-    - name: Kill running gunicorn3 process
-      run: pkill -f gunicorn3
-      
-    - name: Start gunicorn3
-      run: |
-        /usr/bin/gunicorn3 --workers=3 app:app --daemon
