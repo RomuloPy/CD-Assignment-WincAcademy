@@ -4,9 +4,7 @@ This repository was made to submit my WincAcademy CD assignment
 [![Python package](https://github.com/RomuloPy/CD-Assignment-WincAcademy/actions/workflows/calculator-flow.yml/badge.svg)](https://github.com/RomuloPy/CD-Assignment-WincAcademy/actions/workflows/calculator-flow.yml)
 
 
-### Write a short, 200/300-word report in which you discuss at least the following:
-
-#### 1. Name three components of your solution, explain what they are and how they relate to each other. A 'component' can be anything from GitHub Actions or Bash to Digital Ocean and SSH.
+### 1. Name three components of your solution, explain what they are and how they relate to each other. A 'component' can be anything from GitHub Actions or Bash to Digital Ocean and SSH.
 
 1-	Actions
 Actions are a set of code scripts that are designed to automate tasks and integrate with other tools and services. Actions can be used to build, test, deploy, and more. Actions are often packaged as reusable workflows that can be shared with other developers.
@@ -22,7 +20,7 @@ Secrets are sensitive pieces of data that are used in software development workf
 <br>
 
 
-#### 2. Discuss three problems that you encountered along the way and how you solved them.
+### 2. Discuss three problems that you encountered along the way and how you solved them.
 
 
 1-	*“Can’t connect without a private SSH key or password”*
@@ -41,8 +39,9 @@ Secrets are sensitive pieces of data that are used in software development workf
 <br>
 <br>
 
-#### 3. (optional) Anything of note that you want to share about the process of solving this assignment.
+### 3. (optional) Anything of note that you want to share about the process of solving this assignment.
 
-The first part of the assignment went quite good and easy as we had on the previous exercise a similar workflow.
-The second part took me actually too long to solve, as I wasn’t much familiar with Linux. In fact this assignment made me make a lot of research about Linux OS, which made my knowledge about it much richer.
+The first part of the assignment went quite good and easy, as we had on the previous exercise a similar workflow.
 
+The second part took me a long time to resolve, perhaps because I am not very comfortable with the Linux operating system. In fact, I also had no experience with creating droplets on the server and all related processes.
+This exercise meant that I had to do more in-depth research on the Linux operating system and deployment, which made my knowledge about it much richer.
