@@ -35,7 +35,7 @@ Secrets are sensitive pieces of data that are used in software development workf
 - The solution was to let the app running on the backgroung with unicorn and set the host to 0.0.0.0 as following on my app.py file : <br>
     `app.run(host="0.0.0.0", debug=True)`
 <br>
-    **so now when I commit my project, the changes flow directly to the server because the app is continuously running.**
+**so now when I commit my project, the changes flow directly to the server because the app is continuously running.**
 <br>
 <br>
 
