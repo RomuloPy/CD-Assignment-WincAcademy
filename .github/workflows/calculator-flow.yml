@@ -48,3 +48,4 @@ jobs:
         script: |
           cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
           git pull origin main
+          sudo systemctl restart app.service
