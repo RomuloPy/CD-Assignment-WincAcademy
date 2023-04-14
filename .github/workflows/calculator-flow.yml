@@ -41,9 +41,9 @@ jobs:
     - name: Deploy to DigitalOcean
       uses: appleboy/ssh-action@master
       with:
-        host: 159.65.201.52
-        port: 22
-        username: root
+        host: ${{ secrets.DIGITALOCEAN_HOST}}
+        port: ${{ secrets.DIGITALOCEAN_PORT}}
+        username: ${{ secrets.DIGITALOCEAN_USERNAME}}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd /root/actions-runner/flask-app/CD-Assignment-WincAcademy/CD-Assignment-WincAcademy
